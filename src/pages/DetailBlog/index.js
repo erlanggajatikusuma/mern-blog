@@ -1,9 +1,19 @@
 import React from 'react'
+import './detailBlog.scss'
+import { RegisterBg } from '../../assets'
+import { Gap, Link } from '../../components'
+import {useHistory} from 'react-router-dom'
 
 const DetailBlog = () => {
+    const history = useHistory();
     return (
-        <div>
-            <p>Content Detail Blog</p>
+        <div className="detail-blog-wrapper">
+            <img className="img-cover" src={RegisterBg} alt="thumb" />
+            <p className="blog-title">Title Blog</p>
+            <p className="blog-author">Authot - Date Post</p>
+            <p className="blog-body">Duo ipsum tempor aliquyam takimata sed lorem ea ea clita, rebum consetetur sed at sea est sadipscing sed diam tempor,.</p>
+            <Gap height={20} />
+            <Link title="Kembali ke Home" onClick={() => history.push('/')} />
         </div>
     )
 }
